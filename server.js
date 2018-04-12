@@ -41,6 +41,7 @@ app.post('/posts', (req, res) => {
     const field = requiredFields[i];
     if (!(field in req.body)) {
       const message = `Missing \`${field}\` in request body`;
+      console.log('this is the req.body: ', req.body)
       console.error(message);
       return res.status(400).send(message);
     }
